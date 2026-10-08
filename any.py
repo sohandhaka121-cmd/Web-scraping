@@ -21,12 +21,14 @@ if response.status_code == 200:
         title = book.h3.a["title"]
         price = book.find("p", class_="price_color").text
         rating = book.p["class"][1]
+        link = "https://books.toscrape.com/catalogue/" + book.h3.a["href"]
 
         all_book.append({
             "Title": title,
             "Price": price,
             "Rating": rating,
-            "Category": "Books"
+            "Category": "Books",
+            "Link": link
         })
 
     df = pd.DataFrame(all_book)
