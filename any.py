@@ -25,7 +25,8 @@ if response.status_code == 200:
         all_book.append({
             "Title": title,
             "Price": price,
-            "Rating": rating
+            "Rating": rating,
+            "Category": "Books"
         })
 
     df = pd.DataFrame(all_book)
